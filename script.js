@@ -10,16 +10,10 @@ document.addEventListener('DOMContentLoaded',() =>{
     let counter = 0;
     let startTime = Date.now();
  
-    input.addEventListener("input", e => {
-        e.preventDefault();
-        console.log(e.target.value);
-        });
-
-
 
      // zliczanie kliknięć
-
     btn.addEventListener('click', function(){
+
         counter++;
         btn.innerText = 'Klikaj';
         click.innerText = 'Ilość kliknięć: '+ counter;
@@ -27,34 +21,54 @@ document.addEventListener('DOMContentLoaded',() =>{
         // kliki na sekunde
         let timePassed = (Date.now()-startTime)/1000;
         let clickPerSecond = counter/timePassed;
-        pPerSeconds.innerText = 'Kliknieć na sekunde: ' + clickPerSecond.toFixed(6);
-
+        pPerSeconds.innerHTML = "Kliknieć na sekunde: " + clickPerSecond.toFixed(1);
     });
     
      // resetowanie gry 
-    btnReset.addEventListener('click', function(){
-        // counter = 0;
-        // click.innerText = 'Ilość kliknięć: '+counter;
-        // btn.disabled = false;
-        // pSeconds.innerHTML = '';
-        // input.placeholder = 'podaj czas w sekundach';
-        location.reload(true);
+        btnReset.addEventListener('click', function(){
+            location.reload(true);
 
     });
     
-
         // ustawianie czasu
-        let i = -2;
+        let i = -1;
         btnAccept.addEventListener('click', () =>{
+ 
             const time = setInterval(() => {
                 i++;
                 pSeconds.innerHTML = "Czas: " + i + 's ' + '/ '+input.value+'s';
                 if (i >= input.value) {
-                clearInterval(time);
-                btn.disabled = true;
+                    clearInterval(time);
+                    btn.disabled = true;
+                    btnAccept.disabled = true;
             }
         }, 1000);
         });
-        
-            
+
+        // jeśli wprowadzone są niepoprawne dane
+
+        input.addEventListener('input', function(){
+            const val = input.value;
+            const reg = /^[0-9]{1,}$/g;
+            if (!reg.test(val)) {
+                input.classList.add("field-error");
+                pSeconds.innerHTML = 'Błędne dane! Tylko Liczby!';
+                btnAccept.disabled = true;
+                btn.disabled = true;
+
+            } else {
+                btnAccept.disabled = false;
+                btn.disabled = false;
+                 parseInt(input.value,10)
+                input.classList.remove("field-error");
+            }
+        });
+
+        // jeśli input jest pusty
+        if(document.getElementById("input").value.length == 0){
+        btn.disabled = true;
+        btnAccept.disabled = true;
+    }else if (input.value == 0){
+        btn.disabled = true;
+    }
 });
