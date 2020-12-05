@@ -16,19 +16,7 @@ document.addEventListener('DOMContentLoaded',() =>{
         });
 
 
-        // ustawianie czasu
-        let i = -2;
-        btnAccept.addEventListener('click', () =>{
-            const time = setInterval(() => {
-                i++;
-                pSeconds.innerHTML = "Czas: " + i + 's ' + '/ '+input.value+'s';
-                if (i >= input.value) {
-                clearInterval(time);
-                btn.disabled = true;
-            }
-        }, 1000);
-        });
-        
+
      // zliczanie kliknięć
 
     btn.addEventListener('click', function(){
@@ -55,6 +43,18 @@ document.addEventListener('DOMContentLoaded',() =>{
     });
     
 
-
+        // ustawianie czasu
+        let i = -2;
+        btnAccept.addEventListener('click', () =>{
+            const time = setInterval(() => {
+                i++;
+                pSeconds.innerHTML = "Czas: " + i + 's ' + '/ '+input.value+'s';
+                if (i >= input.value) {
+                clearInterval(time);
+                btn.disabled = true;
+            }
+        }, 1000);
+        });
+        
             
 });
