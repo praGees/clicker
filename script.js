@@ -68,7 +68,5 @@ document.addEventListener('DOMContentLoaded',() =>{
         if(document.getElementById("input").value.length == 0){
         btn.disabled = true;
         btnAccept.disabled = true;
-    }else if (input.value == 0){
-        btn.disabled = true;
-    }
+        }
 });
