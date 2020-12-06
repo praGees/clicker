@@ -6,46 +6,63 @@ document.addEventListener('DOMContentLoaded',() =>{
     const input = document.getElementById('input');
     const btnAccept = document.querySelector('.accept');
     const pPerSeconds = document.querySelector('.click_per_second')
+    const loginDiv = document.querySelector('.login_div');
+    const loginLink = document.querySelector('.logowanie')
+    const container = document.querySelector('.container');
+    const header = document.querySelector('h1');
 
     let counter = 0;
     let startTime = Date.now();
- 
+    let i = 0;
+    btn.disabled = true;
+    btnAccept.disabled = true;
 
-     // zliczanie kliknięć
+    // login panel
+    loginLink.addEventListener('click', function(){
+            container.style.display = 'none';
+            loginDiv.style.display = 'flex';
+            header.innerText = 'Panel logowania';
+    });
+
+
+     // counter of clicks
     btn.addEventListener('click', function(){
-
-        counter++;
         btn.innerText = 'Klikaj';
         click.innerText = 'Ilość kliknięć: '+ counter;
 
-        // kliki na sekunde
+        // clicks per second
+        counter++;
         let timePassed = (Date.now()-startTime)/1000;
         let clickPerSecond = counter/timePassed;
-        pPerSeconds.innerHTML = "Kliknieć na sekunde: " + clickPerSecond.toFixed(1);
+        pPerSeconds.innerHTML = "Kliknieć na sekunde: " + clickPerSecond.toFixed(4);
     });
+
     
-     // resetowanie gry 
-        btnReset.addEventListener('click', function(){
-            location.reload(true);
+     // reset game
+    btnReset.addEventListener('click', function(){
+        location.reload(true);
 
     });
-    
-        // ustawianie czasu
-        let i = -1;
-        btnAccept.addEventListener('click', () =>{
- 
-            const time = setInterval(() => {
-                i++;
-                pSeconds.innerHTML = "Czas: " + i + 's ' + '/ '+input.value+'s';
-                if (i >= input.value) {
-                    clearInterval(time);
-                    btn.disabled = true;
-                    btnAccept.disabled = true;
-            }
-        }, 1000);
+
+    // time setting
+    btnAccept.addEventListener('click', () =>{
+        const valInput = input.value;
+        console.log(valInput);
+        pSeconds.innerHTML = "Czas: " + i + 's ' + '/ '+input.value+'s';
+        btn.disabled = false;
+                    
+        const time = setInterval(() => {
+            i++;
+            pSeconds.innerHTML = "Czas: " + i + 's ' + '/ ' +input.value+'s';
+            if (i >= input.value) {
+                clearInterval(time);
+                btn.disabled = true;
+                btnAccept.disabled = true;
+        }
+    }, 1000);
         });
 
-        // jeśli wprowadzone są niepoprawne dane
+        // validation of entered data
 
         input.addEventListener('input', function(){
             const val = input.value;
@@ -56,17 +73,18 @@ document.addEventListener('DOMContentLoaded',() =>{
                 btnAccept.disabled = true;
                 btn.disabled = true;
 
-            } else {
+        // if input is empty
+            } else if(document.getElementById("input").value.length == 0){
+            btn.disabled = true;
+            btnAccept.disabled = true;
+            }else {
                 btnAccept.disabled = false;
-                btn.disabled = false;
                  parseInt(input.value,10)
                 input.classList.remove("field-error");
             }
         });
 
-        // jeśli input jest pusty
-        if(document.getElementById("input").value.length == 0){
-        btn.disabled = true;
-        btnAccept.disabled = true;
-        }
+        // mniejsce na testowe funkcje
+
+
 });

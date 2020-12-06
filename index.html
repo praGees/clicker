@@ -13,7 +13,23 @@
         <div class="wrapper">
             <h1>Klikanie na czas! Sprawdź sie!</h1>
 
-            <div class="container">
+                <div class="login_link">
+                    <ul class="login_a">
+                        <li> <a href="#" class="logowanie">Login</a></li>
+                    </ul>
+                </div>
+
+                            <!-- login form -->
+        <div class="login_div no_active">
+            <form action="" method="POST" class="login_form">
+                <input type="text" id="log_in" placeholder="login"class="login_input">
+                <input type="password" id="passwd"placeholder="password" class="password_input">
+                <button type="submit" name="" id="submit_btn"class="submit">Zaloguj</button>
+            </form>
+            </div>  
+
+
+            <div class="container">  
                 <div class="time">
                     <p class="counter"> Ilość kliknięć:</p>
                     <p class="click_per_second">Klikniecia na sekunde:</p>
@@ -24,7 +40,7 @@
                     <form action="">
                     <input id="input" class="input_seconds" placeholder="Czas w sekundach">
                 </form>
-                    <button class="accept">Accept</button>
+                    <button class="accept">Akceptuj</button>
                 </div>
                 
                 <div class="click_button">
