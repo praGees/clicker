@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded',() =>{
+
+    console.log('DOM został pomyślnie wczytany');
+
     const btn = document.querySelector('.btn-primary');
     const click = document.querySelector('.counter');
     const btnReset = document.querySelector('.restart');
@@ -24,7 +27,6 @@ document.addEventListener('DOMContentLoaded',() =>{
             header.innerText = 'Panel logowania';
     });
 
-
      // counter of clicks
     btn.addEventListener('click', function(){
         btn.innerText = 'Klikaj';
@@ -32,11 +34,12 @@ document.addEventListener('DOMContentLoaded',() =>{
 
         // clicks per second
         counter++;
-        let timePassed = (Date.now()-startTime)/1000;
-        let clickPerSecond = counter/timePassed;
-        pPerSeconds.innerHTML = "Kliknieć na sekunde: " + clickPerSecond.toFixed(4);
+        let timePassed = (Date.now()-startTime)/1000,
+        clickPerSecond = counter/timePassed;
+        pPerSeconds.innerHTML = "Kliknieć na sekunde: " + clickPerSecond.toFixed(6);     
     });
     
+
      // reset game
     btnReset.addEventListener('click', function(){
         location.reload(true);
@@ -49,6 +52,7 @@ document.addEventListener('DOMContentLoaded',() =>{
         console.log(valInput);
         pSeconds.innerHTML = "Czas: " + i + 's ' + '/ '+input.value+'s';
         btn.disabled = false;
+        btnAccept.disabled = true;
                     
         const time = setInterval(() => {
             i++;
@@ -57,6 +61,8 @@ document.addEventListener('DOMContentLoaded',() =>{
                 clearInterval(time);
                 btn.disabled = true;
                 btnAccept.disabled = true;
+                input.disabled = true;
+
         }
     }, 1000);
         });
@@ -84,6 +90,5 @@ document.addEventListener('DOMContentLoaded',() =>{
         });
 
         // mniejsce na testowe funkcje
-
 
 });
