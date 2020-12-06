@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded',() =>{
         let clickPerSecond = counter/timePassed;
         pPerSeconds.innerHTML = "Kliknieć na sekunde: " + clickPerSecond.toFixed(4);
     });
-
     
      // reset game
     btnReset.addEventListener('click', function(){
