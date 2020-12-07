@@ -127,7 +127,7 @@ button{
     background-color: #fff;
 }
 .field-error{
-    color:#fff;
+    color:#000;
     font-weight: 800;
     background-color: #f01a1a ;
 }
