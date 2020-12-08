@@ -25,11 +25,11 @@ document.addEventListener('DOMContentLoaded',() =>{
     let counter = 1;
     let x = 3;
     let i = 0;
-    let startTime = Date.now();
     btn.disabled = true;
     btnAccept.disabled = true;
     header2.style.visibility = true;
 
+    let startTime = Date.now();
 
      // counter of clicks
     btn.addEventListener('click', function(){

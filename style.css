@@ -21,6 +21,7 @@ div{
     justify-content: center;
     align-items: center;
     position: relative;
+
 }
 .wrapper h1{
     margin: 20px 0px;
@@ -55,6 +56,7 @@ div{
     flex-direction: column;
     align-items: center;
     background: url('bcg.jpg');
+    box-shadow: inset 0px 5px 30px grey;
 }
 
 .time{
@@ -133,24 +135,31 @@ button{
 }
 
 .login_div{
-    background-color: #d3cece;
-    height: 350px;
+    border:2px solid lightgreen ;
+    height: 500px;
     width: 450px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     border-radius: 15px;
+    opacity: 0.85;
 }
 .login_input, .password_input{
     height: 50px;
-    border-radius: 10px;
+    border-radius: 40px;
     font-size: 18px;
     padding-left: 10px;
 }
+.login_input{
+    width: 300px;
+}
+.password_input{
+    width: 250px;
+}
 .submit{
     height: 50px;
-    width: 300px;
+    width: 200px;
     cursor: pointer;
     font-size: 24px;
 }
