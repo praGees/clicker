@@ -23,7 +23,7 @@ div{
     position: relative;
 }
 .wrapper h1{
-    margin-bottom: 20px;
+    margin: 20px 0px;
     color: #fff;
     font-size: 50px;
 }
@@ -124,7 +124,7 @@ button{
     margin: 40px 0px;
 }
 .restart:hover{
-    background-color: #fff;
+    background:linear-gradient(#456,#f34);
 }
 .field-error{
     color:#000;
@@ -133,9 +133,6 @@ button{
 }
 
 .login_div{
-    display: none;  
-}
-.login_form{
     background-color: #d3cece;
     height: 350px;
     width: 450px;
@@ -160,3 +157,31 @@ button{
 .no_active{
     display: none;
 }
+.return{
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.circle{
+    width: 35px;
+    height: 35px;
+    color: #fff;
+    -webkit-animation-name: rotate; 
+    -webkit-animation-duration: 2s; 
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+
+
+
+@keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to { 
+        -webkit-transform: rotate(360deg);
+    }
+}
+
