@@ -12,30 +12,26 @@
 
         <div class="wrapper">
             <h1>Klikanie na czas! Sprawdź sie!</h1>
-            <h2></h2>
-
-                <div class="login_link">
-                    <ul class="login_a">
-                        <li> <a href="#" class="logowanie">Login</a></li>
-
-                    </ul>
-                </div>
-
+            <div class="username">
+                <h2>XXXX</h2>
+            </div>
                             <!-- login form -->
         <div class="login_div no_active">
+            <p>Podaj swój nick!</p>
+            <img src="circle.png" alt="">
+
+            <form action="" id="nick_login" >
                 <input type="text" id="log_in" placeholder="login"class="login_input">
+            </form>
 
-                <input type="password" id="passwd" placeholder="password" class="password_input">
-
-                <button  type="submit" name="" id="submit_btn" class="submit">Zaloguj</button>
-
-                <button class="return">Return</button>
+                <button  type="submit" name="" id="submit_btn" class="submit">Accept</button>
 
 
             </div>  
 
 
             <div class="container">  
+
                 <div class="time">
                     <p class="counter"> Ilość kliknięć:</p>
                     <p class="click_per_second">Klikniecia na sekunde:</p>
@@ -43,14 +39,17 @@
                 </div>
 
                 <div class="accept_buttons">
-                    <input id="input" class="input_seconds" placeholder="Czas w sekundach">
-                    
+                    <form action="" id="take_seconds">
+                        <input id="input" class="input_seconds" placeholder="Czas w sekundach">
+                    </form>
                     <button class="accept">OK</button>
                 </div>
+
                 
                 <div class="click_button">
                     <button class="btn-primary">Klikaj</button>
                 </div>
+
 
                 <div class="new_game">
                     <button class="restart">Restart</button>
@@ -59,5 +58,7 @@
                 </div>
             </div>
     </div>
+
+
     </body>
 </html>
