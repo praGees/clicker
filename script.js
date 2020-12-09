@@ -18,20 +18,23 @@ document.addEventListener('DOMContentLoaded',() =>{
     const usernameDiv = document.querySelector('h2');
     const loginName = document.querySelector('.login_input');
     const takeSeconds = document.getElementById('take_seconds');
+    const body = document.querySelector('body');
 
     let counter = 1;
     let i = -3;
     btn.disabled = true;
     btnAccept.disabled = true;
-    header.style.display = 'none';
-    container.style.display = 'none';
-    usernameDiv.style.display = 'none';
-    loginDiv.style.display = 'flex';
+    // header.style.display = 'none';
+    // container.style.display = 'none';
+    // usernameDiv.style.display = 'none';
+    loginDiv.style.display = 'none';
     document.forms["nick_login"].reset();
 
     let startTime = Date.now();
 
      // counter of clicks
+
+
     btn.addEventListener('click', function(){
 
         const valInput = input.value;
@@ -117,7 +120,7 @@ document.addEventListener('DOMContentLoaded',() =>{
         //     btn.disabled = true;
         //     btnAccept.disabled = true;
         // }
-        loginDiv.style.display = 'flex';
+        // loginDiv.style.display = 'flex';
 
         location.reload();
 
@@ -126,6 +129,12 @@ document.addEventListener('DOMContentLoaded',() =>{
     // login panel
 
     btnSubmit.addEventListener('click',function(){
+        function clearForm() {
+            const frm = document.getElementsByName('inps')[0];
+            frm.reset();
+            return false;
+         }
+         clearForm();
         header.style.display = 'flex';
         container.style.display = 'flex';
         usernameDiv.style.display = 'flex';

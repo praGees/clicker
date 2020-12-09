@@ -13,51 +13,50 @@
         <div class="wrapper">
             <h1>Klikanie na czas! Sprawdź sie!</h1>
             <div class="username">
-                <h2>XXXX</h2>
+                <!-- <h2>XXXX</h2> -->
             </div>
                             <!-- login form -->
-        <div class="login_div no_active">
-            <p>Podaj swój nick!</p>
-            <img src="circle.png" alt="">
+            <div class="login_div no_active">
 
-            <form action="" id="nick_login" >
-                <input type="text" id="log_in" placeholder="login"class="login_input">
-            </form>
+                <p>Podaj swój nick!</p>
+                <img src="circle.png" alt="">
+
+                <form action="" id="nick_login" >
+                    <input type="text" id="log_in" placeholder="login"class="login_input">
+                </form>
 
                 <button  type="submit" name="" id="submit_btn" class="submit">Accept</button>
-
-
             </div>  
 
 
-            <div class="container">  
+                <div class="container">  
 
-                <div class="time">
-                    <p class="counter"> Ilość kliknięć:</p>
-                    <p class="click_per_second">Klikniecia na sekunde:</p>
-                    <p class="second">Czas:</p>
+                    <div class="time">
+                        <p class="counter"> Ilość kliknięć:</p>
+                        <p class="click_per_second">Klikniecia na sekunde:</p>
+                        <p class="second">Czas:</p>
+                    </div>
+
+                    <div class="accept_buttons">
+                        <form name="inps" action="" id="take_seconds">
+                            <input id="input" class="input_seconds" placeholder="Czas w sekundach">
+                        </form>
+                        <button class="accept">OK</button>
+                    </div>
+
+                    
+                    <div class="click_button">
+                        <button class="btn-primary">Klikaj</button>
+                    </div>
+
+
+                    <div class="new_game">
+                        <button class="restart">Restart</button>
+                    </div>
+
                 </div>
 
-                <div class="accept_buttons">
-                    <form action="" id="take_seconds">
-                        <input id="input" class="input_seconds" placeholder="Czas w sekundach">
-                    </form>
-                    <button class="accept">OK</button>
-                </div>
-
-                
-                <div class="click_button">
-                    <button class="btn-primary">Klikaj</button>
-                </div>
-
-
-                <div class="new_game">
-                    <button class="restart">Restart</button>
-                </div>
-
-                </div>
-            </div>
-    </div>
+        </div>
 
 
     </body>
